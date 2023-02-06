@@ -1,0 +1,21 @@
+package com.shruteekaTech.doNothingMehod;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.api.mockito.expectation.PowerMockitoStubber;
+
+class DoNothingTest {
+
+	@Test
+	public void doProcessTest() {
+		
+		DoNothing mock = PowerMockito.mock(DoNothing.class);
+		
+		PowerMockito.doNothing();
+		
+	}
+	
+
+}

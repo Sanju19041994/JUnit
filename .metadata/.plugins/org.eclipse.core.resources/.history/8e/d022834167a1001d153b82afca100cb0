@@ -1,0 +1,22 @@
+
+package com.shruteekaTech.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.shruteekaTech.service.WelcomeService;
+
+@WebMvcTest(value = WelcomeController.class)
+class WelcomeControllerTest {
+
+	@MockBean
+	private WelcomeService welcomeService;
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	
+
+}

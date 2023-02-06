@@ -1,0 +1,22 @@
+package com.shruteekaTech.exception;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ExceptionsTest {
+
+	Exceptions exceptions = new Exceptions();
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDivision() {
+		exceptions.division(10, 0);
+		
+	}
+	
+	public void testPrintMsg() {
+		String str = null;
+		exceptions.printMsg(str);
+	}
+
+}

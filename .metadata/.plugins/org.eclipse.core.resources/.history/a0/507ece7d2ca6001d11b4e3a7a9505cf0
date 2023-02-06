@@ -1,0 +1,62 @@
+package com.shruteekaTech.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shruteekaTech.entity.Country;
+import com.shruteekaTech.service.CountryService;
+import com.shruteekaTech.utils.ResponseApi;
+
+@RestController
+@RequestMapping("/country")
+public class CountryController {
+
+	@Autowired
+	private CountryService countryService;
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Country> getCountryById(@PathVariable Integer id){
+		Country countryById = this.countryService.getCountryById(id);
+		return new ResponseEntity<Country>(countryById,HttpStatus.OK);
+	}
+	
+	@GetMapping("/")
+	public ResponseEntity<List<Country>> getAllCountry(){
+		List<Country> allCountry = this.countryService.getAllCountry();
+		return new ResponseEntity<List<Country>>(allCountry,HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/{countryName}")
+	public ResponseEntity<Country> getCountryByName(@PathVariable String countryName){
+		Country countryByName = this.countryService.getCountryByName(countryName);
+		return new ResponseEntity<Country>(countryByName,HttpStatus.OK);
+	}
+	
+	@PostMapping("/")
+	public ResponseEntity<Country> addCountry(@RequestBody Country country){
+		Country addCountry = this.countryService.addCountry(country);
+		return new ResponseEntity<Country>(addCountry,HttpStatus.CREATED);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Country> updateCountry
+	(@PathVariable Integer id, @RequestBody Country country)
+	{	
+		Country updateCountry = this.countryService.updateCountry(id, country);
+		return new ResponseEntity<Country>(updateCountry,HttpStatus.CREATED);
+	}
+	
+	
+	
+}

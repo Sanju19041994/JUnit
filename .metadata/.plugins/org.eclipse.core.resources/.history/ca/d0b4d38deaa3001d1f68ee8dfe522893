@@ -1,0 +1,21 @@
+package com.shruteekaTech.service;
+
+import java.util.List;
+
+import com.shruteekaTech.entity.Country;
+
+public class CountryServiceImpl implements CountryService {
+
+	@Override
+	public Country getCountryById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Country> getAllCountry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

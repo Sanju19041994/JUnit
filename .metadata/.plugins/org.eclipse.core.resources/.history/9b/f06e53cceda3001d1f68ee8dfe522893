@@ -1,0 +1,40 @@
+package com.shruteekaTech.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+import com.shruteekaTech.entity.Country;
+import com.shruteekaTech.repository.CountryRepo;
+
+class CountryServiceImplTest {
+
+	@Mock
+	private CountryRepo countryRepo;
+	
+	@InjectMocks
+	private CountryServiceImpl countryService; 
+	
+	@Test
+	public void getCountryByIdTest() {
+		
+		List<Country> con = new ArrayList<Country>();
+		con.add(new Country(1, "India", "Aurangabad"));
+		con.add(new Country(2, "India", "Pune"));
+		
+		int id = 1;
+		// For Repository method
+		when(countryRepo.findAll()).thenReturn(con);
+		//For Service method
+		int actual = countryService.getCountryById(id).getId();
+		assertEquals(1, actual);
+		
+		
+	}
+}

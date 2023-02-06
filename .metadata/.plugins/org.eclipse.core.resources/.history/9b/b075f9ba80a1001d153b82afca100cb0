@@ -1,0 +1,14 @@
+package com.shruteekaTech.exception;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ExceptionsTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.shruteekaTech;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PallindromNumberTest {
+
+	PallindromNumber number = new PallindromNumber();
+	
+	@Test
+	void testIsPallindrom() {
+		String str = "radar";
+		boolean pallindrom = number.isPallindrom(str);
+		assertTrue(pallindrom);
+	}
+
+}

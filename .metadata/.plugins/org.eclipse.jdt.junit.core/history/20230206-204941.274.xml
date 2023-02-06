@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RestApplicationTest" project="RestApplicationTest" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.shruteekaTech.service.CountryServiceImplTest" time="0.037" displayname="CountryServiceImplTest" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.service.CountryServiceImplTest]">
+    <testcase name="getCountryByIdTest" classname="com.shruteekaTech.service.CountryServiceImplTest" time="0.029" displayname="getCountryByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.service.CountryServiceImplTest]/[method:getCountryByIdTest()]"/>
+    <testcase name="getCountryByNameTest" classname="com.shruteekaTech.service.CountryServiceImplTest" time="0.003" displayname="getCountryByNameTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.service.CountryServiceImplTest]/[method:getCountryByNameTest()]"/>
+    <testcase name="getAllCountryTest" classname="com.shruteekaTech.service.CountryServiceImplTest" time="0.003" displayname="getAllCountryTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.service.CountryServiceImplTest]/[method:getAllCountryTest()]"/>
+  </testsuite>
+  <testsuite name="com.shruteekaTech.RestApplicationTestApplicationTests" time="0.005" displayname="RestApplicationTestApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.RestApplicationTestApplicationTests]">
+    <testcase name="contextLoads" classname="com.shruteekaTech.RestApplicationTestApplicationTests" time="0.005" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.RestApplicationTestApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,16 @@
+package com.shruteekaTech.service;
+
+import java.util.List;
+
+import com.shruteekaTech.entity.Country;
+
+public interface CountryService {
+
+	public Country getCountryById(Integer id);
+	
+	public List<Country> getAllCountry();
+	
+	public List<Country> getCountryByName(String countryName);
+	
+	public Country addCountry(Country country);
+}

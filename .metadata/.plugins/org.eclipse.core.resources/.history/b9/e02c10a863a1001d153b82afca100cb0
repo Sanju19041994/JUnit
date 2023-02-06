@@ -1,0 +1,13 @@
+package com.shruteekaTech.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+
+@WebMvcTest(value = WelcomeController.class)
+class WelcomeControllerTest {
+
+	
+
+}

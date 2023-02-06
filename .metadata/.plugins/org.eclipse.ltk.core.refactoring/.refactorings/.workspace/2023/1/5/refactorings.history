@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Mocking&apos; to &apos;EasyMockingServiceLayer&apos;" description="Rename resource &apos;Mocking&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Mocking" name="EasyMockingServiceLayer" stamp="1675167237107" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Junit4Exception&apos; to &apos;Junit5ExceptionHandling&apos;" description="Rename resource &apos;Junit4Exception&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Junit4Exception" name="Junit5ExceptionHandling" stamp="1675179820168" updateReferences="true"/>
+</session>

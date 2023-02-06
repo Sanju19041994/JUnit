@@ -1,0 +1,11 @@
+package com.shruteekaTech.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class WelcomeService {
+
+	public String welcomeMethod() {
+		return "welcome to service";
+	}
+}

@@ -1,0 +1,14 @@
+package com.shruteekaTech.doNothingMehod;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PrivateMethodTest {
+
+	@Test
+	public void doWorkTest() {
+		
+	}
+
+}

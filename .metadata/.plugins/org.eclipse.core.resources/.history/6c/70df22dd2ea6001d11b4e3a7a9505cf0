@@ -1,0 +1,68 @@
+package com.shruteekaTech.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shruteekaTech.entity.Country;
+import com.shruteekaTech.repository.CountryRepo;
+
+@Service
+public class CountryServiceImpl implements CountryService {
+
+	@Autowired
+	private CountryRepo countryRepo;
+	
+	
+	@Override
+	public Country getCountryById(Integer id) {
+		List<Country> findAll = this.countryRepo.findAll();
+		Country country = null;
+		for(Country con : findAll) {
+			if(con.getId()==id) {
+				country = con;
+			}
+		}
+		return country;
+	}
+
+	@Override
+	public List<Country> getAllCountry() {
+		List<Country> all = this.countryRepo.findAll();
+		return all;
+	}
+
+	@Override
+	public Country getCountryByName(String countryName) {
+		List<Country> findAll = this.countryRepo.findAll();
+		System.out.println(findAll);
+		Country country=null;
+		for(Country con : findAll) {
+			if(con.getCountryName().equalsIgnoreCase(countryName)) {
+				country = con;
+				System.out.println(country);
+			}
+		}
+		return country;
+	}
+
+	@Override
+	public Country addCountry(Country country) {
+		Country savedCountry = this.countryRepo.save(country);
+		return savedCountry;
+	}
+
+	@Override
+	public Country updateCountry(Integer id, Country country) {
+		country.setId(id);
+		Country updatedCountry = this.countryRepo.save(country);
+		return updatedCountry;
+	}
+
+	@Override
+	public void deleteCountry(Country country) {
+		this.countryRepo.delete(country);
+	}
+
+}

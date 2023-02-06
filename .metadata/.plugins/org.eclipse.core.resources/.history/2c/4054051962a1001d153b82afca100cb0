@@ -1,0 +1,5 @@
+package com.shruteekaTech.controller;
+
+public class WelcomeController {
+
+}
