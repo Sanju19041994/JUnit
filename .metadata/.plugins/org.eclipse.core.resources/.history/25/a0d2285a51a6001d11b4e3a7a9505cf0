@@ -1,0 +1,101 @@
+package com.shruteekaTech.controller;
+
+import static org.assertj.core.api.Assertions.assertThatException;
+import static org.assertj.core.api.Assertions.assertThatRuntimeException;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.shruteekaTech.entity.Country;
+import com.shruteekaTech.service.CountryServiceImpl;
+import com.shruteekaTech.utils.ResourceNotFoundException;
+
+@SpringBootTest(classes = CountryControllerTest.class)
+class CountryControllerTest {
+
+	@Mock
+	private CountryServiceImpl service;
+	
+	@InjectMocks
+	private CountryController controller;
+	
+	@Test
+	public void getCountryByIdTest() {
+		Country country = new Country(1, "India", "Aurangabad");
+		int id = 1;
+		
+		when(service.getCountryById(id)).thenReturn(country);
+		ResponseEntity<Country> countryById = controller.getCountryById(id);
+		
+		int actual = countryById.getBody().getId();
+		assertEquals(id, actual);
+		assertEquals(HttpStatus.FOUND, countryById.getStatusCode());
+		
+		assertThatRuntimeException();
+	//	assertThrows(ResourceNotFoundException.class,()->controller.getCountryById(id));
+	}
+	
+	@Test
+	public void getAllCountryTest() {
+		List<Country> myCountry = new ArrayList<Country>();
+		myCountry.add(new Country(1, "India", "Aurangabad"));
+		myCountry.add(new Country(2, "India", "Beed"));
+	//	int expected = myCountry.size();
+		
+		when(service.getAllCountry()).thenReturn(myCountry);
+		ResponseEntity<List<Country>> allCountry = controller.getAllCountry();
+		
+		int actual = allCountry.getBody().size();
+		assertEquals(2, actual);
+//		assertEquals(expected, actual);	
+		assertEquals(HttpStatus.FOUND	, allCountry.getStatusCode());
+	}
+	
+	@Test
+	public void getCountryByNameTest() {
+		Country country = new Country(1, "India", "Mumbai");
+		String countryName = "India";
+		
+		when(service.getCountryByName(countryName)).thenReturn(country);
+		ResponseEntity<Country> countryByName = controller.getCountryByName(countryName);
+		
+		String actual = countryByName.getBody().getCountryName();
+		assertEquals(countryName, actual);
+		assertEquals(HttpStatus.FOUND, countryByName.getStatusCode());
+	}
+	
+	@Test
+	public void addCountryTest() {
+		Country country = new Country(4, "Aus", "Melburn");
+		
+		when(service.addCountry(country)).thenReturn(country);
+		ResponseEntity<Country> addCountry = controller.addCountry(country);
+		
+		Country actual = addCountry.getBody();
+		assertEquals(country, actual);
+		assertEquals(HttpStatus.CREATED,addCountry.getStatusCode() );
+	}
+	
+	@Test
+	public void updateCountryTest() {
+		int id = 1;
+		Country country = new Country(1, "Eng", "London");
+		
+		when(service.updateCountry(country, id)).thenReturn(country);
+		ResponseEntity<Country> updateCountry = controller.updateCountry(country, id);
+		
+		Country actual = updateCountry.getBody();
+		assertEquals(country, actual);
+		assertEquals(HttpStatus.OK, updateCountry.getStatusCode());
+	}
+	
+}

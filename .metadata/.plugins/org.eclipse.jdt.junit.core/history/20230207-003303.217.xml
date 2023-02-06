@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CountryControllerTest" project="RestApplicationTest" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.shruteekaTech.controller.CountryControllerTest" time="0.091" displayname="CountryControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]">
+    <testcase name="getCountryByIdTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.066" displayname="getCountryByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:getCountryByIdTest()]"/>
+    <testcase name="addCountryTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.003" displayname="addCountryTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:addCountryTest()]"/>
+    <testcase name="getCountryByNameTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.009" displayname="getCountryByNameTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:getCountryByNameTest()]"/>
+    <testcase name="updateCountryTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.003" displayname="updateCountryTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:updateCountryTest()]"/>
+    <testcase name="getAllCountryTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.003" displayname="getAllCountryTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:getAllCountryTest()]"/>
+  </testsuite>
+</testrun>

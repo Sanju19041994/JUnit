@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="CountryControllerTest" project="RestApplicationTest" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.shruteekaTech.controller.CountryControllerTest" time="0.031" displayname="CountryControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]">
+    <testcase name="getCountryByIdTest" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.013" displayname="getCountryByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:getCountryByIdTest()]"/>
+    <testcase name="getAllCountry" classname="com.shruteekaTech.controller.CountryControllerTest" time="0.017" displayname="getAllCountry()" uniqueid="[engine:junit-jupiter]/[class:com.shruteekaTech.controller.CountryControllerTest]/[method:getAllCountry()]"/>
+  </testsuite>
+</testrun>

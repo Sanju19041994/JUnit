@@ -1,0 +1,56 @@
+package com.shruteekaTech.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.shruteekaTech.entity.Country;
+import com.shruteekaTech.service.CountryServiceImpl;
+
+@SpringBootTest(classes = CountryControllerTest.class)
+class CountryControllerTest {
+
+	@Mock
+	private CountryServiceImpl service;
+	
+	@InjectMocks
+	private CountryController controller;
+	
+	@Test
+	public void getCountryByIdTest() {
+		Country country = new Country(1, "India", "Aurangabad");
+		
+		int id = 1;
+		
+	}
+	
+	@Test
+	public void getAllCountryTest() {
+		List<Country> myCountry = new ArrayList<Country>();
+		myCountry.add(new Country(1, "India", "Aurangabad"));
+		myCountry.add(new Country(2, "India", "Beed"));
+	//	int expected = myCountry.size();
+		
+		when(service.getAllCountry()).thenReturn(myCountry);
+		
+		ResponseEntity<List<Country>> allCountry = controller.getAllCountry();
+		
+		assertEquals(HttpStatus.FOUND	, allCountry.getStatusCode());
+		int actual = allCountry.getBody().size();
+		
+		assertEquals(2, actual);
+//		assertEquals(expected, actual);	
+	}
+	
+	
+	
+}

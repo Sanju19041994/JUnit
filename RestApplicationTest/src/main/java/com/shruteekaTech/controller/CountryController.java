@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shruteekaTech.entity.Country;
 import com.shruteekaTech.service.CountryService;
+import com.shruteekaTech.utils.ResourceNotFoundException;
 import com.shruteekaTech.utils.ResponseApi;
 
 @RestController
@@ -27,20 +28,34 @@ public class CountryController {
 	@GetMapping("/id/{id}")
 	public ResponseEntity<Country> getCountryById(@PathVariable Integer id){
 		Country countryById = this.countryService.getCountryById(id);
-		return new ResponseEntity<Country>(countryById,HttpStatus.OK);
+		if(countryById != null) {
+			return new ResponseEntity<Country>(countryById,HttpStatus.FOUND);
+		}else {
+			throw new ResourceNotFoundException("Country", "Country Id");
+		}
 	}
 	
 	@GetMapping("/")
 	public ResponseEntity<List<Country>> getAllCountry(){
 		List<Country> allCountry = this.countryService.getAllCountry();
-		return new ResponseEntity<List<Country>>(allCountry,HttpStatus.OK);
+		
+		if(allCountry !=  null) {
+			return new ResponseEntity<List<Country>>(allCountry,HttpStatus.FOUND);
+		}else {
+			throw new ResourceNotFoundException("Country", "Country Id");
+		}
+		
 	}
 	
 	
 	@GetMapping("/name/{countryName}")
 	public ResponseEntity<Country> getCountryByName(@PathVariable String countryName){
 		Country countryByName = this.countryService.getCountryByName(countryName);
-		return new ResponseEntity<Country>(countryByName,HttpStatus.OK);
+		 if(countryByName != null) {
+			 return new ResponseEntity<Country>(countryByName,HttpStatus.FOUND);
+		 }else {
+				throw new ResourceNotFoundException("Country", "Country Id");
+		}
 	}
 	
 	@PostMapping("/")
@@ -54,7 +69,11 @@ public class CountryController {
 	(@RequestBody Country country,@PathVariable Integer id)
 	{	
 		 Country updateCountry = this.countryService.updateCountry(country, id);
-		return new ResponseEntity<Country>(updateCountry,HttpStatus.CREATED);
+		if(updateCountry != null) {
+			return new ResponseEntity<Country>(updateCountry,HttpStatus.OK);
+		 }else {
+				throw new ResourceNotFoundException("Country", "Country Id");
+		}
 	}
 	
 	
